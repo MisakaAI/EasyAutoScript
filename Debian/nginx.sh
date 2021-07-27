@@ -1,4 +1,5 @@
 #!/bin/bash
+# Ningx / Debian 10
 
 # 安装依赖
 sudo apt install curl gnupg2 ca-certificates lsb-release
@@ -26,3 +27,6 @@ systemctl start nginx
 
 # 开机启动
 systemctl enable nginx
+
+# 查看状态
+systemctl status nginx
