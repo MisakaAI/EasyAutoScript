@@ -17,4 +17,4 @@ else
 	echo "Error, $ID not debian or ubuntu."
 fi
 
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git config --global user.name "lolisound"
-git config --global user.email "lolisound@gmail.com"
+git config --global user.name "MisakaAI"
+git config --global user.email "i@zi-o.com"
 git config --global color.ui true
 git config --global push.default simple
 git config --global core.autocrlf input

@@ -2,7 +2,7 @@
 
 # browser-sync
 # http://www.browsersync.cn/#install
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 npm install -g browser-sync
 
 # npm uninstall browser-sync -save

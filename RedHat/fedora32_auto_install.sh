@@ -33,7 +33,7 @@ dnf install -y gcc gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
 dnf clean packages
 dnf install -y nodejs
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 npm install -g browser-sync
 
 # VLC
