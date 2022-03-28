@@ -1,5 +1,6 @@
 #!/bin/bash
-# PostgreSQL / Debian 10
+# PostgreSQL / Ubuntu
+# https://www.postgresql.org/download/linux/ubuntu/
 
 # 创建文件存储库配置：
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -14,7 +15,7 @@ sudo apt-get update
 sudo apt-get -y install postgresql
 
 # 开启数据库服务器
-pg_ctlcluster 13 main start
+# pg_ctlcluster 13 main start
 
 # 启动服务
 systemctl start postgresql
@@ -35,8 +36,8 @@ find / -name postgresql.conf
 find / -name pg_hba.conf
 
 # 安装客户端
-apt install -y postgresql-client
+# apt install -y postgresql-client
 
 # 连接到数据库
 # su -c psql - postgres
-psql -h localhost -U postgres -p 5432
+# psql -h localhost -U postgres -p 5432

@@ -1,24 +1,22 @@
 # EasyAutoScript
 
 一些简易的自动化脚本,用于创建主机后的设置。
+基本上都是基于Ubuntu LTS的，但也有一些历史遗留问题。（如Centos和Debian）
 
-## Debian / Ubuntu
+## my.json
 
-- **desktop**
-用于 Ubuntu / Debian 桌面环境(GNOME3)
-- **server**
-用于 Debian 服务器端
-- **sources**
-用于切换 apt 源为国内镜像服务器
+一些个人数据放在`my.json`的文件里。
+涉及隐私所以不放在Github上，但是会放一个`DEMO.json`，没有数据的版本。
+用的时候按照变量名填写，然后重命名为`my.js`就行。
 
-[清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/)
+## Linux
 
-[阿里巴巴开源镜像站](https:opsx.alibaba.com/mirror)
+- 用于 Liux 操作系统
 
-## RedHat / CentOS
-
-- 用于 RedHat / CentOS 服务器端
-
-## Windows 
+## Windows
 
 - 用于 Windows 操作系统
+
+## Script
+
+- 个人使用的小脚本，存档方便以后用的时候拿来改一下接着用。

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# txt文档批量从gbk转换为utf-8
+import os
+import re
+
 pwd=os.walk(os.getcwd())
 for a,b,c in pwd:
     for i in c:

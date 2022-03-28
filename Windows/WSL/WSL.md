@@ -1,8 +1,10 @@
 # 适用于 Linux 的 Windows 子系统
 
+[文档](https://docs.microsoft.com/zh-cn/windows/wsl/)
+
 ## 安装
 
-[安装 WSL](https://docs.microsoft.com/zh-cn/windows/wsl/install)
+[安装](https://docs.microsoft.com/zh-cn/windows/wsl/install)
 
 ```PowerShell
 # 查看可用 Linux 发行版列表

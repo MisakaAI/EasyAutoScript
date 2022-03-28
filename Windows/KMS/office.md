@@ -1,6 +1,14 @@
-# office
+# Office
+
 GVLK KEY 由微软官方提供的批量激活密钥。
 https://docs.microsoft.com/en-us/deployoffice/vlactivation/gvlks
+https://docs.microsoft.com/zh-cn/deployoffice/vlactivation/gvlks
+
+## 部署
+
+[概述](https://docs.microsoft.com/zh-cn/deployoffice/overview-office-deployment-tool)
+[微软Office部署工具](https://go.microsoft.com/fwlink/p/?LinkID=626065)
+[微软Office配置工具](https://config.office.com/)
 
 ## 切换到安装目录
 

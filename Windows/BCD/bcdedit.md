@@ -1,6 +1,10 @@
-[BCDEdit 命令行选项](https://msdn.microsoft.com/zh-cn/library/windows/hardware/mt450468(v=vs.85).aspx)
+# 启动配置数据
 
-```
+Boot Configuration Data，简称BCD。
+
+[BCDEdit 命令行选项](https://docs.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/bcdedit-command-line-options)
+
+```cmd
 # 列出固件启动项
 bcdedit /enum firmware
 # 删除启动项双引号内替换为对应的标识符

@@ -16,6 +16,7 @@ apt-get install -y postgresql
 pg_ctlcluster 11 main start
 
 # php
+# https://www.php.net/manual/zh/install.unix.nginx.php
 apt-get install -y php php-pgsql libapache2-mod-php
 apt-get install -y php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl
 
