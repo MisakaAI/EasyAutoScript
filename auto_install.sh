@@ -1,10 +1,11 @@
 #!/bin/bash
 
-source /etc/os-release
 if [ "$UID" != "0" ]; then
 	echo "Error, This script must be run as root !"
 	exit 0
 fi
+
+source /etc/os-release
 if [ "$ID" != "ubuntu" ]; then
 	echo Error, $ID not is ubuntu.
     exit 0
@@ -126,7 +127,9 @@ if test -n "$zsh" && $zsh; then
 	sh -c 'echo "plugins=(zsh-autosuggestions)" >> /etc/zsh/zshrc'
 
 	if test -n "$omz" && $omz; then
-		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        git clone https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git
+        cd ohmyzsh/tools
+        REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh install.sh
 		sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="ys"/g' ~/.zshrc
 		# omz theme set ys
 	fi

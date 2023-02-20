@@ -5,7 +5,9 @@ git config --global user.email "i@zi-o.com"
 git config --global color.ui true
 git config --global push.default simple
 git config --global core.autocrlf input
-git config --global core.safecrlf true
+git config --global safe.directory *
+# git config --global core.safecrlf true
+
 
 ## set global proxy
 # git config --global http.proxy 'socks5://127.0.0.1:1080' 
