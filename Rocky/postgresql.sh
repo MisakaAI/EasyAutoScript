@@ -17,3 +17,8 @@ sudo dnf install -y postgresql15-server
 sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
 sudo systemctl enable postgresql-15
 sudo systemctl start postgresql-15
+
+# 防火墙设置
+# firewall-cmd --permanent --zone=public --add-port=5432/tcp
+firewall-cmd --permanent --zone=public --add-service=postgresql
+firewall-cmd --reload
