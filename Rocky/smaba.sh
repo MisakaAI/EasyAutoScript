@@ -1,3 +1,5 @@
+# samba
+
 dnf install -y samba
 
 systemctl start smb.service
