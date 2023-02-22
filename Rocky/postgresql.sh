@@ -1,10 +1,14 @@
 # PostgreSQL
+# https://www.postgresql.org/download/linux/redhat/
 
-# Install the repository RPM:
+# 安装 RPM 存储库:
 sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-# Disable the built-in PostgreSQL module:
+# 禁用内置 PostgreSQL 模块:
 sudo dnf -qy module disable postgresql
+
+# 禁用 11-14
+dnf config-manager --set-disable pgdg11 pgdg12 pgdg13 pgdg14
 
 # Install PostgreSQL:
 sudo dnf install -y postgresql15-server

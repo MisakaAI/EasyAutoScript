@@ -1,5 +1,6 @@
 # EPEL
 # EPEL(Extra Packages for Enterprise Linux)是由Fedora Special Interest Group维护的Enterprise Linux（RHEL、CentOS）中经 常用到的包。
+# https://docs.fedoraproject.org/en-US/epel/
 
 dnf config-manager --set-enabled crb
 dnf install -y epel-release

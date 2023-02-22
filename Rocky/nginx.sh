@@ -12,9 +12,9 @@ baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
 gpgcheck=1
 enabled=1
 gpgkey=https://nginx.org/keys/nginx_signing.key
-module_hotfixes=true
+module_hotfixes=true' > /etc/yum.repos.d/nginx.repo
 
-[nginx-mainline]
+echo '[nginx-mainline]
 name=nginx mainline repo
 baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
 gpgcheck=1
@@ -38,5 +38,6 @@ systemctl enable nginx
 # 允许通过防火墙
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --reload
 
 # 关闭SELINUX

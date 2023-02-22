@@ -19,7 +19,7 @@ sh -c 'echo "setopt no_nomatch" >> /etc/zshrc'
 
 # 为每次搜索更新命令的内部列表（散列）。
 # 这会导致速度损失，只有在路径中的目录文件访问速度慢时才可能明显。
-# sh -c 'echo "zstyle \":completion:*\" rehash true" >> /etc/zshrc'
+sh -c 'echo "zstyle \":completion:*\" rehash true" >> /etc/zshrc'
 
 # 语法高亮显示
 git clone https://github.com/zsh-users/zsh-syntax-highlighting

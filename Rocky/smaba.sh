@@ -3,6 +3,8 @@ dnf install -y samba
 systemctl start smb.service
 systemctl enable smb.service
 
+cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+
 echo "
 [samba]
     comment = Raspberry Pi Network Attached Storage
@@ -14,7 +16,6 @@ echo "
     browseable = yes
     public = yes
     guest ok = yes" >> /etc/samba/smb.conf
-
 
 systemctl restart smb.service
 
