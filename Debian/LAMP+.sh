@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# 操作系统 + 网页服务器 + 数据库服务器 + 脚本语言
+# Linux + Apache/Nginx + Mysql/Mariadb/PostgreSQL + PHP/Python
+
+################
+## PostgreSQL ##
+################
+
+# https://www.postgresql.org/download/linux/ubuntu/
+
+sudo sh -c 'echo "deb https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get -y install postgresql
+
+#############
+## MariaDB ##
+#############
+
+# 在官方页面上生成配置文件内容
+# https://mariadb.org/download/?t=repo-config
+
+sudo curl -o /etc/apt/trusted.gpg.d/mariadb_release_signing_key.asc 'https://mariadb.org/mariadb_release_signing_key.asc'
+sudo sh -c "echo 'deb https://mirrors.tuna.tsinghua.edu.cn/mariadb/repo/10.10/ubuntu jammy main' >>/etc/apt/sources.list"
+
+apt-get update
+apt-get install mariadb-server
+
+############
+## Apache ##
+############
+
+# https://httpd.apache.org/docs/2.4/install.html
+
+apt install apache2
+systemctl start apache2.service
+systemctl enable apache2.service
+
+###########
+## Nginx ##
+###########
+
+# http://nginx.org/en/linux_packages.html#Ubuntu
+
+# 安装必备组件
+sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+
+# 导入一个正式的nginx签名密钥，以便apt可以验证软件包 真实性。
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
+    | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+
+# 设置apt存储库
+
+# 使用稳定的 Nginx 包
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
+    | sudo tee /etc/apt/sources.list.d/nginx.list
+
+# 使用主线 Nginx 包
+# echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+# http://nginx.org/packages/mainline/ubuntu `lsb_release -cs` nginx" \
+#     | sudo tee /etc/apt/sources.list.d/nginx.list
+
+# 设置存储库固定以优先选择 Nginx 官方的包
+echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" \
+    | sudo tee /etc/apt/preferences.d/99nginx
+
+# 安装
+apt update
+apt install nginx -y
+
+systemctl start nginx.service
+systemctl enable nginx.service
+
+#########
+## PHP ##
+#########
+
+# 安装 PHP
+apt install php-common php-cli
+
+# FastCGI Process Manager
+apt install php-fpm
+
+# 支持 MySQL
+apt install php-mysql
+
+# 支持 PostgreSQL
+apt-get install php-pgsql
+
+# 支持 cURL
+apt install php-curl
+
+# 常用的
+apt-get install -y php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl
