@@ -1,1 +1,3 @@
 # Podman
+
+dnf install podman
