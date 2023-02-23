@@ -32,3 +32,10 @@ sh -c 'echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highligh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # 将插件添加到 Oh My Zsh 要加载的插件列表中（在~/.zshrc内）
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions)/g' ~/.zshrc
+
+# ~/.zshrc
+
+# export ZSH="$HOME/.oh-my-zsh"
+# ZSH_THEME="ys"
+# plugins=(git)
+# source $ZSH/oh-my-zsh.sh
