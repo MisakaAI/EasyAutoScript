@@ -8,8 +8,6 @@ dnf install -y openssh openssl
 
 dnf install sqlite
 
-dnf install ffmpeg-free
-
 dnf install -y nmap
 
 # dnf install tmux
@@ -18,3 +16,7 @@ dnf install -y nmap
 # epel
 
 dnf install -y htop
+
+# rpmfusion
+
+dnf install ffmpeg
