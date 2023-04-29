@@ -1,6 +1,6 @@
 # ZSH
 
-dnf install -y zsh
+dnf install -y zsh git
 
 # Oh My Zsh
 

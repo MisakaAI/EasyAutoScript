@@ -31,3 +31,7 @@ systemctl restart smb.service
 
 firewall-cmd --permanent --zone=public --add-service=samba
 firewall-cmd --reload
+
+## 设置用户帐户
+## 使用的用户名必须属于系统帐户，否则不会保存。
+smbpasswd -a username
