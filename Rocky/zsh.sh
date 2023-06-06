@@ -3,7 +3,9 @@
 dnf install -y zsh git
 
 # Oh My Zsh
-
+# https://github.com/ohmyzsh/ohmyzsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# usermod root -s /bin/zsh
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git
 cd ohmyzsh/tools
 REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh install.sh

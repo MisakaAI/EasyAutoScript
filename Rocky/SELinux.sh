@@ -14,3 +14,6 @@ echo "SELINUX=disabled" > /etc/selinux/config
 
 # 使配置立即生效
 setenforce 0
+
+# 查看selinux状态
+sestatus
