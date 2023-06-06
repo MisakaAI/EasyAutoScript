@@ -22,3 +22,11 @@ sudo systemctl start postgresql-15
 # firewall-cmd --permanent --zone=public --add-port=5432/tcp
 firewall-cmd --permanent --zone=public --add-service=postgresql
 firewall-cmd --reload
+
+# Python3
+# pip install --upgrade pip           # upgrade pip to at least 20.3
+# pip install "psycopg[binary]"
+
+# vim  ~/.pgpass
+# hostname:port:database:username:password
+# chmod 0600 ~/.pgpass
