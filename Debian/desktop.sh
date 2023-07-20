@@ -57,5 +57,5 @@ echo -e "mono $keepass2/KeePass.exe --auto-type\n"
 # Atom
 # https://atom.io/
 
-# 
+# Netease Cloud Music
 # https://music.163.com/#/download

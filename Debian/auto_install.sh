@@ -92,11 +92,14 @@ fi
 apt install -y gcc g++ make
 
 # Python3
-apt install -y python3 python3-dev python3-pip
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+apt install -y python3 python3-dev python3-pip python3-venv
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 # update-alternatives --install /usr/bin/python python /usr/bin/python2 2
+
+# Ubuntu 23.04 / Debian12 开始，不再允许虚拟环境之外的 pip install
+# 可以使用 --break-system-packages 跳过系统限制强制安装
+# python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
+# pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 # pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
 # Git
@@ -157,6 +160,13 @@ rm -rf ohmyzsh
 
 # Other
 apt install -y screenfetch htop
+
+# apt install ffmpeg
+# apt install tmux screen
+# apt install nmap
+# apt install unzip
+# apt install samba
+# apt install wol
 
 # Show Version
 screenfetch

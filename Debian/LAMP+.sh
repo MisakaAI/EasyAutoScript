@@ -8,11 +8,18 @@
 ################
 
 # https://www.postgresql.org/download/linux/ubuntu/
+# https://www.postgresql.org/download/linux/debian/
 
 sudo sh -c 'echo "deb https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+wget --quiet -O - https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y install postgresql
+
+# E: gnupg, gnupg2 and gnupg1 do not seem to be installed, but one of them is required for this operation
+# apt-get install gnupg2
+
+# W: https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt/dists/bookworm-pgdg/InRelease: 密钥存储在过时的 trusted.gpg 密钥环中（/etc/apt/trusted.gpg），请参见 apt-key(8) 的 DEPRECATION 一节以了解详情。
+# mv /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
 
 #############
 ## MariaDB ##
@@ -41,6 +48,7 @@ systemctl enable apache2.service
 ## Nginx ##
 ###########
 
+# https://nginx.org/en/linux_packages.html#Debian
 # http://nginx.org/en/linux_packages.html#Ubuntu
 
 # 安装必备组件
@@ -89,8 +97,5 @@ apt install php-mysql
 # 支持 PostgreSQL
 apt-get install php-pgsql
 
-# 支持 cURL
-apt install php-curl
-
 # 常用的
-apt-get install -y php-zip php-xml php-intl php-gd php-curl php-mbstring php-apcu php-intl
+apt install php-curl php-xml php-gd php-json php-mbstring php-zip php-bz2 php-intl php-gmp php-apcu php-imagick
