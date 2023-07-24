@@ -26,10 +26,9 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 #   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 # 清华大学
 echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/ \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # 安装DOCKER引擎
 sudo apt-get update

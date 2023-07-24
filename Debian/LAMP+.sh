@@ -48,11 +48,13 @@ systemctl enable apache2.service
 ## Nginx ##
 ###########
 
-# https://nginx.org/en/linux_packages.html#Debian
-# http://nginx.org/en/linux_packages.html#Ubuntu
 
 # 安装必备组件
+
+# http://nginx.org/en/linux_packages.html#Ubuntu
 sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+# https://nginx.org/en/linux_packages.html#Debian
+sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
 
 # 导入一个正式的nginx签名密钥，以便apt可以验证软件包 真实性。
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
@@ -86,7 +88,7 @@ systemctl enable nginx.service
 #########
 
 # 安装 PHP
-apt install php-common php-cli
+# apt install php-common php-cli
 
 # FastCGI Process Manager
 apt install php-fpm

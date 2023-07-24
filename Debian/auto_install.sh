@@ -32,11 +32,12 @@ fi
 # 选择软件源
 
 # 如果不支持 https
-# apt install apt-transport-https
+# apt install apt-transport-https ca-certificates
 
 mirrors() {
     echo "Please set source."
     echo '1. TUNA - mirrors.tuna.tsinghua.edu.cn'
+    # https://mirrors.tuna.tsinghua.edu.cn/help/debian/
     echo '2. Aliyun - mirrors.aliyun.com'
     echo '3. Huawei - repo.huaweicloud.com'
     read mode
@@ -166,7 +167,7 @@ apt install -y screenfetch htop
 # apt install nmap
 # apt install unzip
 # apt install samba
-# apt install wol
+# apt install wakeonlan
 
 # Show Version
 screenfetch
