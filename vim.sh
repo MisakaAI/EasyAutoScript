@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://github.com/MisakaAI/vim-config
 
 # apt install -y vim exuberant-ctags git
 # dnf install vim ctags

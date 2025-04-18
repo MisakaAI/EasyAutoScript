@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git config --global user.name "MisakaAI"
-git config --global user.email "i@zi-o.com"
+git config --global user.email "ai@misaka.cn"
 
 git config --global color.ui true # 让Git适当的显示颜色
 git config --global push.default simple # 只会推送本地当前分支，如果上游分支的名称与本地分支不同，则拒绝推送。
