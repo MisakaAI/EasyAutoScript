@@ -25,6 +25,9 @@ git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.gi
 /bin/bash brew-install/install.sh
 rm -rf brew-install
 
+# 卸载 Homebrew
+# https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh
+
 # zsh
 # https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git
