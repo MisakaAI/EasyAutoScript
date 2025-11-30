@@ -1,20 +1,25 @@
 #!/bin/bash
+# https://nodejs.org/zh-cn/download
 
-## nodejs
-# https://github.com/nodesource/distributions/blob/master/README.md#deb
-sudo apt-get install -y build-essential
-source /etc/os-release
+# 下载并安装 nvm：
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
-if [ "$ID" == "ubuntu" ]; then
-	# Using Ubuntu
-	curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-    sudo apt-get install -y nodejs
-elif [ "$ID" == "debian" ]; then
-	# Using Debian, as root
-    curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
-    apt-get install -y nodejs
-else
-	echo "Error, $ID not debian or ubuntu."
-fi
+# 代替重启 shell
+\. "$HOME/.nvm/nvm.sh"
 
+# 配置 nvm 使用 npmmirror 镜像站
+export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node
+
+# 下载并安装 Node.js：
+# WSL 环境下会报错
+nvm install 24
+
+# 验证 Node.js 版本：
+node -v
+
+# 验证 npm 版本：
+npm -v
+
+# 配置 npm 使用 npmmirror 镜像站
+# https://npmmirror.com/
 npm config set registry https://registry.npmmirror.com
