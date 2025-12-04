@@ -11,17 +11,12 @@ apt install -y vlc
 apt install -y gimp
 apt install -y inkscape
 apt install -y krita
+apt install -y ffmpeg
+apt install -y nextcloud-desktop
 
 # fonts
-apt-get install -y fonts-noto fonts-inconsolata fonts-wqy-zenhei fonts-wqy-microhei fonts-fantasque-sans
-
-# ibus-rime
-apt-get install -y ibus-rime
-
-#  rime to 9
-mkdir -p ~/.config/ibus/rime
-echo -e "patch:\n  \"menu/page_size\": 9" > ~/.config/ibus/rime/default.custom.yaml
-ibus-daemon -drx
+# apt-get install -y fonts-noto fonts-inconsolata fonts-wqy-zenhei fonts-wqy-microhei fonts-fantasque-sans
+apt-get install -y fonts-cascadia-code
 
 # nfs
 apt-get install -y nfs-common
@@ -45,6 +40,15 @@ echo -e "mono $keepass2/KeePass.exe --auto-type\n"
 # VirtualBox
 # https://www.virtualbox.org/wiki/Downloads
 
+usermod -aG vboxusers $USER
+
+modprobe -r kvm_intel
+modprobe -r kvm
+echo "
+# KVM
+blacklist kvm
+blacklist kvm_intel" >> /etc/modprobe.d/blacklist.conf
+
 # WPS Office
 # https://www.wps.cn/product/wpslinux
 
@@ -52,10 +56,9 @@ echo -e "mono $keepass2/KeePass.exe --auto-type\n"
 # https://store.steampowered.com/about/
 
 # Visual Studio Code
-# https://code.visualstudio.com/
+# https://code.visualstudio.com/Download
 
-# Atom
-# https://atom.io/
-
-# Netease Cloud Music
-# https://music.163.com/#/download
+# Tencent
+# https://im.qq.com/linuxqq/index.shtml
+# https://linux.weixin.qq.com/
+# https://y.qq.com/download/download.html

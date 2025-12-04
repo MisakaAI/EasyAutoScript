@@ -7,7 +7,7 @@ if [ "$UID" != "0" ]; then
 	exit 0
 fi
 
-# 检测系统是否是 Ubuntu
+# 检测系统是否是 Debian
 source /etc/os-release
 if [ "$ID" != "debian" ]; then
 	echo Error, $ID not is debian.
@@ -67,6 +67,7 @@ apt install -y build-essential cmake
 # Python3
 apt install -y python3 python3-dev python3-pip python3-venv
 update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Git
