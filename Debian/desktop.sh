@@ -15,14 +15,14 @@ apt install -y ffmpeg
 apt install -y nextcloud-desktop
 
 # fonts
-# apt-get install -y fonts-noto fonts-inconsolata fonts-wqy-zenhei fonts-wqy-microhei fonts-fantasque-sans
-apt-get install -y fonts-cascadia-code
+# apt install -y fonts-noto fonts-inconsolata fonts-wqy-zenhei fonts-wqy-microhei fonts-fantasque-sans
+apt install -y fonts-cascadia-code
 
 # nfs
-apt-get install -y nfs-common
+apt install -y nfs-common
 
 # keepass2
-apt-get install -y keepass2 xdotool
+apt install -y keepass2 xdotool
 keepass2='/usr/lib/keepass2'
 mkdir $keepass2/Languages
 cp Chinese_Simplified.lngx $keepass2/Languages

@@ -11,7 +11,7 @@ echo 'Password'
 read password
 method='chacha20'
 
-apt-get update && apt-get install -y python3 python3-pip libsodium-dev
+apt update && apt install -y python3 python3-pip libsodium-dev
 ldconfig
 
 pip3 install shadowsocks

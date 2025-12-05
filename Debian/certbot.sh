@@ -13,7 +13,7 @@ sudo snap install core
 sudo snap refresh core
 
 # 删除 certbot-auto 和任何 Certbot OS 包
-sudo apt-get remove certbot
+sudo apt remove certbot
 
 # 安装 Certbot
 sudo snap install --classic certbot

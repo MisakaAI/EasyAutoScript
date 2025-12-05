@@ -5,7 +5,7 @@
 
 # ubuntu:PPA
 sudo add-apt-repository ppa:yann1ck/onedrive
-sudo apt-get update
+sudo apt update
 sudo apt install onedrive -y
 
 # 显示你的配置

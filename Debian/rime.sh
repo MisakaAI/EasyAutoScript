@@ -2,7 +2,7 @@
 # https://rime.im/
 
 # ibus-rime
-apt-get install -y ibus-rime
+apt install -y ibus-rime
 mkdir -p ~/.config/ibus/rime
 
 echo "patch:

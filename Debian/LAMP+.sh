@@ -17,11 +17,13 @@ sudo install -d /usr/share/postgresql-common/pgdg
 sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
 . /etc/os-release
 sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-sudo apt-get update
+sudo apt update
 sudo apt install postgresql
 
+sudo -u postgres psql
+
 # E: gnupg, gnupg2 and gnupg1 do not seem to be installed, but one of them is required for this operation
-# apt-get install gnupg2
+# apt install gnupg2
 
 # W: https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt/dists/bookworm-pgdg/InRelease: 密钥存储在过时的 trusted.gpg 密钥环中（/etc/apt/trusted.gpg），请参见 apt-key(8) 的 DEPRECATION 一节以了解详情。
 # mv /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
@@ -36,8 +38,8 @@ sudo apt install postgresql
 sudo curl -o /etc/apt/trusted.gpg.d/mariadb_release_signing_key.asc 'https://mariadb.org/mariadb_release_signing_key.asc'
 sudo sh -c "echo 'deb https://mirrors.tuna.tsinghua.edu.cn/mariadb/repo/10.10/ubuntu jammy main' >>/etc/apt/sources.list"
 
-apt-get update
-apt-get install mariadb-server
+apt update
+apt install mariadb-server
 
 ############
 ## Apache ##
@@ -102,7 +104,7 @@ apt install php-fpm
 apt install php-mysql
 
 # 支持 PostgreSQL
-apt-get install php-pgsql
+apt install php-pgsql
 
 # 常用的
 apt install php-curl php-xml php-gd php-json php-mbstring php-zip php-bz2 php-intl php-gmp php-apcu php-imagick
