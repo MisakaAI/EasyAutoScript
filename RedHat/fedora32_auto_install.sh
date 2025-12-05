@@ -76,8 +76,8 @@ sh -c 'echo "plugins=(zsh-autosuggestions)" >> /etc/zshrc'
 
 ## SSH
 sed -i "s/#TCPKeepAlive yes/TCPKeepAlive yes\nClientAliveInterval 60\nClientAliveCountMax 120/g" /etc/ssh/sshd_config
-systemctl enable sshd.service
-systemctl start sshd.service
+systemctl enable ssh.service
+systemctl start ssh.service
 
 # vim
 dnf install -y git vim ctags

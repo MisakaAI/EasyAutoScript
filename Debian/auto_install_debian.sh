@@ -85,7 +85,7 @@ sed -i "s/#TCPKeepAlive yes/TCPKeepAlive yes\nClientAliveInterval 60\nClientAliv
 # ROOT用户可以SSH登录
 # sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
-systemctl restart sshd.service
+systemctl restart ssh.service
 
 # Zsh
 apt install -y zsh zsh-syntax-highlighting # zsh-autosuggestions

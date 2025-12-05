@@ -125,7 +125,7 @@ sed -i "s/#TCPKeepAlive yes/TCPKeepAlive yes\nClientAliveInterval 60\nClientAliv
 # ROOT用户可以SSH登录
 # sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config
 
-systemctl restart sshd.service
+systemctl restart ssh.service
 
 # 设置密钥登陆
 if test -n "$ssh_key"; then
