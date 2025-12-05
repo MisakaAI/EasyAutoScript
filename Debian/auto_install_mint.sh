@@ -20,6 +20,13 @@ fi
 apt install apt-transport-https ca-certificates -y
 cp /etc/apt/sources.list.d/official-package-repositories.list cat /etc/apt/sources.list.d/official-package-repositories.list.bak
 
+echo "deb https://mirrors.tuna.tsinghua.edu.cn/linuxmint zara main upstream import backport
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu noble main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-security main restricted universe multiverse
+" > /etc/apt/sources.list.d/official-package-repositories.list
+
 # 更新软件源
 apt update && apt upgrade -y && apt autoremove -y
 
