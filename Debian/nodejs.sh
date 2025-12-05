@@ -23,3 +23,7 @@ npm -v
 # 配置 npm 使用 npmmirror 镜像站
 # https://npmmirror.com/
 npm config set registry https://registry.npmmirror.com
+
+# Qwen3-Coder
+# https://qwenlm.github.io/qwen-code-docs/zh/
+npm i -g @qwen-code/qwen-code
