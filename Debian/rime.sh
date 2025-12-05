@@ -5,7 +5,7 @@
 apt install -y ibus-rime
 mkdir -p ~/.config/ibus/rime
 
-echo "patch:
+echo 'patch:
   "menu/page_size": 9
   "style/horizontal": true
   "menu/display_tray": false
@@ -13,7 +13,7 @@ echo "patch:
   ascii_composer:
     switch_key:
       Caps_Lock: commit_code
-  shift_key: inline_ascii" > ~/.config/ibus/rime/default.custom.yaml
+  shift_key: inline_ascii' > ~/.config/ibus/rime/default.custom.yaml
 
 ibus-daemon -drx
 
