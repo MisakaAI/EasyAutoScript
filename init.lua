@@ -68,7 +68,29 @@ require("lazy").setup({
   -- 文件树
   { "nvim-tree/nvim-tree.lua" },
   -- 语法高亮
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    config = function()
+        -- 现在使用主模块 'nvim-treesitter' 进行配置
+        require("nvim-treesitter").setup({
+            -- 【核心功能配置】
+            highlight = {
+                enable = true, -- 启用代码高亮
+                additional_vim_regex_highlighting = false, -- 避免与传统Vim正则高亮冲突，性能更好
+            },
+            indent = { enable = true }, -- 启用基于Tree-sitter的缩进（实验性）
+            -- 【自动管理语法解析器（推荐）】
+            -- 首次启动时自动安装下列语言的解析器
+            ensure_installed = { "c", "cpp", "cmake", "lua", "vim", "vimdoc", "bash", "yaml", "xml", "csv", "markdown", "toml", "python", "html", "css", "javascript", "sql" },
+            -- 设置为 true 会在启动时同步安装，阻塞直到完成
+            sync_install = false,
+            -- 设置为 true 会在打开新文件时，自动安装该语言对应的解析器
+            auto_install = true,
+        })
+    end,
+  },
   -- Git 状态提示
   { "lewis6991/gitsigns.nvim" },
   -- 显示缩进线
@@ -154,24 +176,6 @@ require('nvim-tree').setup({
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', {
     noremap = true,
     silent = true
-})
-
--- Treesitter 语法高亮配置
-require("nvim-treesitter.configs").setup({
-  -- 确保安装这些语言的解析器
-  ensure_installed = {
-    "c",
-    "cpp",
-    "lua",
-    "python",
-    "html",
-    "css",
-    "javascript",
-    "markdown",
-    "markdown_inline",
-  },
-  highlight = { enable = true },  -- 启用 Treesitter 高亮语法
-  indent = { enable = true },  -- 智能缩进
 })
 
 -- 行号左侧显示 Git 修改标记
