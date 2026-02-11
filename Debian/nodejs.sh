@@ -27,3 +27,13 @@ npm config set registry https://registry.npmmirror.com
 # Qwen3-Coder
 # https://qwenlm.github.io/qwen-code-docs/zh/
 npm i -g @qwen-code/qwen-code
+
+# Codex
+npm i -g @openai/codex
+cat << 'EOF' >> ~/.zshrc
+codex-proxy() {
+  http_proxy="http://127.0.0.1:7890" \
+  https_proxy="http://127.0.0.1:7890" \
+  codex
+}
+EOF
