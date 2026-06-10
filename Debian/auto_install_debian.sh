@@ -3,14 +3,14 @@
 # 用于 Debian 13 trixie 系统安装后的自动配置环境。
 # 检测是否是 ROOT 用户
 if [ "$UID" != "0" ]; then
-	echo "Error, This script must be run as root !"
-	exit 0
+    echo "Error, This script must be run as root !"
+    exit 0
 fi
 
 # 检测系统是否是 Debian
 source /etc/os-release
 if [ "$ID" != "debian" ]; then
-	echo Error, $ID not is debian.
+    echo Error, $ID not is debian.
     exit 0
 fi
 

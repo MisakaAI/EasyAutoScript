@@ -1,0 +1,16 @@
+ruff
+numpy
+pandas
+scipy
+matplotlib
+requests
+websockets
+Pillow
+tqdm
+PySide6
+pyserial
+pyqtgraph
+openpyxl
+pyinstaller
+psycopg[binary]
+Nuitka[all]
