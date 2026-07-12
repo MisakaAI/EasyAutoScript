@@ -38,8 +38,8 @@ cd ../..
 rm -rf ohmyzsh
 echo "setopt no_nomatch" >> ~/.zshrc
 echo "zstyle \":completion:*\" rehash true" >> ~/.zshrc
-brew install zsh-syntax-highlighting
-echo "source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# plugins=(git zsh-syntax-highlighting)
 
 # git
 bash git_config.sh

@@ -12,7 +12,7 @@ export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node
 
 # 下载并安装 Node.js：
 # WSL 环境下会报错
-nvm install 24
+nvm install 25
 
 # 验证 Node.js 版本：
 node -v
