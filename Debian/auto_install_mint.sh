@@ -3,14 +3,14 @@
 
 # 检测是否是 ROOT 用户
 if [ "$UID" != "0" ]; then
-	echo "Error, This script must be run as root !"
-	exit 0
+    echo "Error, This script must be run as root !"
+    exit 0
 fi
 
 # 检测系统是否是 Linux Mint
 source /etc/os-release
 if [ "$ID" != "linuxmint" ]; then
-	echo Error, $ID not is linux mint.
+    echo Error, $ID not is linux mint.
     exit 0
 fi
 

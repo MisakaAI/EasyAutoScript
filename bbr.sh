@@ -4,8 +4,8 @@
 # Linux kernel 4.9+ 已支持 tcp_bbr
 
 if [ "$UID" != "0" ]; then
-	echo "Error: This script must be run as root !"
-	exit 0
+    echo "Error: This script must be run as root !"
+    exit 0
 fi
 
 # 启用BBR

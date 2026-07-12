@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ "$UID" != "0" ]; then
-	echo "Error: This script must be run as root !"
-	exit 0
+    echo "Error: This script must be run as root !"
+    exit 0
 fi
 
 # 将硬件时间设置为 localtime

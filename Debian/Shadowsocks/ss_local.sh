@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ "$UID" != "0" ]; then
-	echo "请使用 root 账户执行本程序."
-	exit 0
+    echo "请使用 root 账户执行本程序."
+    exit 0
 fi
 echo 'Server IP address'
 read server_ip

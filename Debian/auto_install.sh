@@ -9,14 +9,14 @@ usermail=''
 
 # 检测是否是 ROOT 用户
 if [ "$UID" != "0" ]; then
-	echo "Error, This script must be run as root !"
-	exit 0
+    echo "Error, This script must be run as root !"
+    exit 0
 fi
 
 # 检测系统是否是 Ubuntu
 source /etc/os-release
 if [ "$ID" != "ubuntu" ]; then
-	echo Error, $ID not is ubuntu.
+    echo Error, $ID not is ubuntu.
     exit 0
 fi
 
@@ -130,10 +130,10 @@ systemctl restart ssh.service
 # 设置密钥登陆
 if test -n "$ssh_key"; then
     if [ ! -d "$HOME/.ssh" ]; then
-		mkdir $HOME/.ssh
-	fi
-	echo $ssh_key > $HOME/.ssh/authorized_keys
-	chmod 600 $HOME/.ssh/authorized_keys
+        mkdir $HOME/.ssh
+    fi
+    echo $ssh_key > $HOME/.ssh/authorized_keys
+    chmod 600 $HOME/.ssh/authorized_keys
 fi
 
 # Zsh
