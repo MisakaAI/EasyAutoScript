@@ -12,6 +12,9 @@ git config --global core.quotepath false # 中文文件名或者路径不转义
 git config --global core.editor vim # 改默认的编辑器
 git config --global format.pretty oneline # 显示历史记录时，每个提交的信息只显示一行
 git config --global credential.helper store # 使用 Git 进行身份验证时会记住凭据（用户名和密码）
+git config --global log.abbrevCommit true # 默认显示短 Hash
+git config --global core.abbrev 8 # 把 Hash 缩短为 8 位
+
 
 git config --global -l
 
